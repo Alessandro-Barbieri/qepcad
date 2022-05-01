@@ -1,0 +1,39 @@
+FILE(GLOB PCADST_SRC
+CADCL.c
+CADFPCAD.c
+CADFPCADWI.c
+CELLSCPCELL.c
+PCELLHOWTV.c
+CATV.c
+CCADCON.c
+CCADCONEXT.c
+CCADCONFPFS.c
+CCADCONmod.c
+CHTVQ.c
+CTSEQ.c
+LTFOCWTV.c
+LTFOCALWTV.c
+PCADCFCADC.c
+PCADCINDEX.c
+PCADCL.c
+PCADCSV.c
+PCADSCANL.c
+PCADSTATS.c
+PCADWRITE.c
+PLCAD.c
+SCADDSCON.c
+SIMPLE_CAD_INFO.c
+REPLACE_WITH_SIMPLE.c
+)
+
+set_source_files_properties(${PCADST_SRC} PROPERTIES LANGUAGE CXX)
+add_library(pcadst OBJECT ${PCADST_SRC})
+set_target_properties(pcadst PROPERTIES LANGUAGE CXX)
+target_include_directories(pcadst
+        PUBLIC
+        /usr/include/saclib
+        ${CMAKE_SOURCE_DIR}/source/
+        ${CMAKE_SOURCE_DIR}/extensions/sfext
+)
+
+target_sources(libqepcad PRIVATE $<TARGET_OBJECTS:pcadst>)

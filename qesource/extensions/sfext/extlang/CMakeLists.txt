@@ -1,0 +1,39 @@
+FILE(GLOB EXTLANG_SRC
+ADDROOTKFUNC.c
+CELLDSORT.c
+ESCELLWR.c
+SCAD2ESCAD.c
+ESCCPLIST1.c
+ESCMHSCONST1.c
+ESCMINHITSET.c
+ESCADCL.c
+LTFOCWTVMARK.c
+SCFILTER.c
+SCCONFLICTQ.c
+ESCSLKMF.c
+PARTLIST.c
+SPLITBYPART.c
+CLOSESTINDEX.c
+VECTOR_DIF.c
+SETCADTV2MARK.c
+SETMARK2FMA.c
+CONVEXPROP.c
+EXPROP.c
+UNIVPROP.c
+TEMPWR.c
+)
+
+set_source_files_properties(${EXTLANG_SRC} PROPERTIES LANGUAGE CXX)
+add_library(extlang OBJECT ${EXTLANG_SRC})
+set_target_properties(extlang PROPERTIES LANGUAGE CXX)
+target_include_directories(extlang
+        PUBLIC
+	/usr/include/saclib
+        ${CMAKE_SOURCE_DIR}/source/
+        ${CMAKE_SOURCE_DIR}/extensions/sfext
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+target_sources(libqepcad PRIVATE $<TARGET_OBJECTS:extlang>)
+
+install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/extlang.h" DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/qepcad/sfext")

@@ -1,0 +1,5 @@
+add_subdirectory(rend)
+add_subdirectory(adj2d)
+add_subdirectory(sfext)
+add_subdirectory(lift2D)
+add_subdirectory(newadj)

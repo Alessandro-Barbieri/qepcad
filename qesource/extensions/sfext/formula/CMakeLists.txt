@@ -1,0 +1,39 @@
+FILE(GLOB FORMULA_SRC
+FMAIWRITE.c
+FMAWRITE.c
+FMAWRITEp.c
+FMASMOOTH.c
+FMA2DNF.c
+FMA2QUNF.c
+FMACELLEVAL.c
+FMADMQ.c
+FTYPEINFO.c
+SETTV2FMA.c
+FMAREAD.c
+FMAATOMREAD.c
+POLINDEX2SIGINDEX.c
+FMALEVEL.c
+FMASORT.c
+FMA_REMCONST.c
+FMAOPCOMBINE.c
+FMAWRITELATEX.c
+IPDWRITELATEX.c
+FMAWRITENEWLINE.c
+FMAWRITEQEIN.c
+FMAPOLLIST.c
+TEST.c
+FMATRYDISTRIBUTE.c
+FMASTRENGTHEN.c
+)
+
+set_source_files_properties(${FORMULA_SRC} PROPERTIES LANGUAGE CXX)
+add_library(formula OBJECT ${FORMULA_SRC})
+set_target_properties(formula PROPERTIES LANGUAGE CXX)
+target_include_directories(formula
+        PUBLIC
+        /usr/include/saclib
+        ${CMAKE_SOURCE_DIR}/source/
+        ${CMAKE_SOURCE_DIR}/extensions/sfext
+)
+
+target_sources(libqepcad PRIVATE $<TARGET_OBJECTS:formula>)

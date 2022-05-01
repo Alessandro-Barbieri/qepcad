@@ -1,0 +1,39 @@
+FILE(GLOB PROJPF_SRC
+ADD2PROJFACS.c
+ADD2PROJPOLS.c
+LIST_OF_FACS.c
+LPFSETINTERSECT.c
+LPFSETMINUS.c
+PFDISCRIM.c
+LLIFIP.c
+PFPIPFL.c
+PFRES.c
+PFSREORDER.c
+PFSREORDERREV.c
+PFSSUNION.c
+PFSUFFCOEF.c
+PFSUNION.c
+PMINHITSETWPTS.c
+POLFLAB.c
+PPF.c
+PPFLPROJ.c
+PPFMINHITSET.c
+PPFMINHITSETEXT.c
+PPROJFWRITE.c
+PPWITHHIST.c
+PROJCLOSUREMCEC.c
+QPPPFL.c
+SEPPIVNONPIV.c
+)
+
+set_source_files_properties(${PROJPF_SRC} PROPERTIES LANGUAGE CXX)
+add_library(projpf OBJECT ${PROJPF_SRC})
+set_target_properties(projpf PROPERTIES LANGUAGE CXX)
+target_include_directories(projpf
+        PUBLIC
+        /usr/include/saclib
+        ${CMAKE_SOURCE_DIR}/source/
+        ${CMAKE_SOURCE_DIR}/extensions/sfext
+)
+
+target_sources(libqepcad PRIVATE $<TARGET_OBJECTS:projpf>)
