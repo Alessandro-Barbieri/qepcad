@@ -12,7 +12,7 @@ static void init_SIGINT_handler();
 
 Main Algorithm which drives the QEPCAD sytem. 
 ====================================================================*/
-int mainDUMMY(int argc, char **argv)
+int mainDUMMY(int argc, char **argv, void *topOfTheStack)
 {
        Word Fs,F_e,F_n,F_s,V,t,ac;
        char **av;
