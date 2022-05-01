@@ -19,6 +19,8 @@ int mainDUMMY(int argc, char **argv, void *topOfTheStack)
        Word Fs,F_e,F_n,F_s,V,t,ac;
        char **av;
 
+       atexit(ENDQEPCAD);
+
 Step1: /* Set up the system. */
        ARGSACLIB(argc,argv,&ac,&av);
        BEGINSACLIB((Word *)topOfTheStack);

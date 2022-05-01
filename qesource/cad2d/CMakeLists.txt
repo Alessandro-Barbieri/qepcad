@@ -14,7 +14,6 @@ set_source_files_properties(
 	CXX
 )
 add_executable(CAD2D ${CAD2D_SRC})
-target_sources(CAD2D PRIVATE ${CMAKE_SOURCE_DIR}/source/saclib/GCSI.c )
 set_target_properties(CAD2D PROPERTIES LANGUAGE CXX)
 target_include_directories(CAD2D
 	PUBLIC

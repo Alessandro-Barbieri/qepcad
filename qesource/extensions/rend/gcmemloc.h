@@ -13,7 +13,7 @@
 #ifndef _GCMEMLOC_
 #define _GCMEMLOC_
 
-#include "../../source/saclib/gcword.h"
+#include "saclib/gcword.h"
 
 typedef GCWord gcmemloc;
 

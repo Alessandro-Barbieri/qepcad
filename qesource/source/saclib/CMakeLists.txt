@@ -16,8 +16,6 @@ target_include_directories(qepcadsaclib
         PUBLIC
         /usr/include/saclib
         ${CMAKE_SOURCE_DIR}/source
-        PRIVATE
-        ${CMAKE_CURRENT_LIST_DIR}
 )
 
 target_sources(libqepcad PRIVATE $<TARGET_OBJECTS:qepcadsaclib>)

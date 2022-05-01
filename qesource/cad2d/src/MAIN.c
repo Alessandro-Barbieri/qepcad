@@ -1,3 +1,4 @@
+#include "qepcad.h"
 #include "cad2d.h"
 #include <iostream>
 #include "db/convenientstreams.h"
@@ -16,6 +17,8 @@ int mainDUMMY(int argc, char **argv, void *topOfTheStack)
 {
        Word Fs,F_e,F_n,F_s,V,t,ac;
        char **av;
+
+atexit(ENDQEPCAD);
 
 Step1: /* Set up the system. */
        ARGSACLIB(argc,argv,&ac,&av);

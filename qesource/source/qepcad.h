@@ -13,7 +13,6 @@ extern "C" {
 }
 
 /*-- Other system headers -------------------------------*/
-#include "saclib/replacesac.h"
 #include "saclib/gcword.h"
 #include "main/qepcadcls.h"
 
