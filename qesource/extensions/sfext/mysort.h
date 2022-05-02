@@ -52,7 +52,7 @@ Side Effects
 Word GMSDS(Word *A, Word m, Word (*C)(Word,Word));
 
 
-extern Word BVC(const Word *u_,const Word *v_,Word n) __pure;
+extern Word BVC(const Word *u_,const Word *v_,Word n);
 extern void BVIS(Word **A,Word m,Word n);
 extern Word BVCI1(const Word *u_,const Word *v_,Word n) __pure;
 extern void BVISI1(Word **A,Word m,Word n);

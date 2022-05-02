@@ -13,8 +13,6 @@ Side Effects
   ======================================================================*/
 #include "qepcad.h"
 
-extern Word BVC(Word *u_,Word *v_,Word n);
-
 void BVIS(Word **A, Word m, Word n)
 {
        Word i,j;

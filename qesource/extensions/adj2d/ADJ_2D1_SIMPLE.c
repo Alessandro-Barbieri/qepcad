@@ -4,13 +4,13 @@ that asymptotes are not an issue here, and there is a recursive call for each se
 in V.
  */
 #include "adj2D.h"
-void sa_send(const char* S);
+/*void sa_send(const char* S);*/
 
 Word ADJ_2D1_SIMPLE(Word U, Word V, Word w_l, Word B)
 {
   Word Sol,S,v,J,w_v,u,w_u,I,Solp,t,f;
 
-sa_send("[");
+/*sa_send("[");*/
 
 Sol = NIL;
 S = NIL; 
@@ -61,7 +61,7 @@ Step3: /* */
 
 Return: /* Prepare to return. */
 
-sa_send("]");
+/*sa_send("]");*/
   return Sol;
 }
 

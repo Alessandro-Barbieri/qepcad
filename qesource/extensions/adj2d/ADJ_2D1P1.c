@@ -3,7 +3,7 @@ This considers only a single stack and that from the left.
 This particular function deals negative asymptotes.
 */
 #include "adj2D.h"
-void sa_send(const char* S);
+/*void sa_send(const char* S);*/
 
 Word ADJ_2D1P1(Word U, Word V, Word w_l, Word B)
 {

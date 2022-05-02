@@ -4,7 +4,7 @@ This particular function deals non-asymptotes.
  */
 #include "adj2D.h"
 #define nEw
-void sa_send(const char* S);
+/*void sa_send(const char* S);*/
 #ifdef nEw
 
 Word ADJ_2D1P2(Word U, Word V, Word w_l, Word B)
