@@ -7,7 +7,6 @@ Help file read.
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define HELPPATH               "qepcad.help"
 #define MaxDescriptionSize     6000
 #define MaxCommandNameSize     60
 #define MaxNumInteractionLocs  30
@@ -30,11 +29,9 @@ void HELPFRD()
        int r1, r2, r3, r4, r5; /* fscanf return values. */
   
 Step1: /* Open the text file containing the helps. */
-       if ((qepath = getenv("qe")) == NULL)
-          strcpy(helppath,HELPPATH);
-       else {
-          strcpy(helppath,qepath);
-          strcat(helppath,"/bin/qepcad.help"); }
+       qepath = getenv("qe");
+       strcpy(helppath,qepath);
+       strcat(helppath,"/usr/share/qepcad/qepcad.help");
        if (!(fp = fopen(helppath,"r"))) {
          fprintf(stderr,"Error HELPFRD: Could not open %s\n",helppath);
          exit(1); }
